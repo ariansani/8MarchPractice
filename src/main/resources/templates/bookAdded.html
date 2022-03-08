@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body th:object="${book}">
+    <h1>Added New Book</h1>
+    <p>Book Serial Number</p>
+    <p th:text="${book.id}"></p>
+    <br/>
+    <p>Title</p>
+    <p th:text="${book.title}"></p>
+    <br/>
+    <p>Author</p>
+    <p th:text="${book.author}"></p>
+    <br/>
+    <p>Image File Name</p>
+    <p th:text="${book.imgFileName}"></p>
+    <img th:src="@{${'/images/' +  book.imgFileName+'.jpg'}}" width="343" height="500"/>
+
+    <br/>
+    <a href="/">Add another book</a>
+    
+</body>
+</html>
